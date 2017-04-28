@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<body>
+    <form>
+        <section>
+            <div class="form-field-title">
+                <div class="form-field-title-text">
+                    Name Your Class
+                </div>
+            </div>
+            <div class="form-field-input">
+                <input type="text"
+                       id="className"
+                       class="form-field-input-text"
+                       onchange="onChange()"
+                       value=""
+                       placeholder="Class Name" />
+            </div>
+        </section>
+    </form>
+
+    <script src="https://statics.teams.microsoft.com/sdk/v0.4/js/MicrosoftTeams.min.js"></script>
+    <script type="text/javascript">
+        microsoftTeams.initialize();
+
+
+        //Print out the Context variables from Teams and print them to the screen
+        var name;
+        var tenant;
+        var team;
+        var locale;
+        var entityId;
+        microsoftTeams.getContext(c => {
+            console.log(c);
+            name = c.upn;
+            tenant = c.tid;
+            team = c.groupId;
+            locale = c.locale;
+            entityId = c.entityId;
+
+            document.querySelector('.context-values').innerHTML =
+                `Name: ${name}<br>Tenant:${tenant}<br>Team:${team}<br>Locale:${locale}<br>EntityId:${entityId}`;
+
+        });
+
+        //Set up Tab so every time our Tab is open it calls contentUrl passing along Contex information
+        microsoftTeams.settings.registerOnSaveHandler(function (saveEvent) {
+
+            var className = document.getElementById('className');
+
+            microsoftTeams.settings.setSettings({
+                entityId: className.value,
+                contentUrl: "https://7fae1cdc.ngrok.io?name={upn}&tenant={tid}&group={groupId}&entity={entityId}&locale={locale}", 
+                suggestedDisplayName: "EduTab",  
+            });
+            saveEvent.notifySuccess();
+        });
+
+        //Enable Teams Save button once class name has been filled in
+        function onChange() {
+            if (className.value != "") {
+                microsoftTeams.settings.setValidityState(true);
+            }
+        }
+    </script>
+
+    <div class="context-values">
+
+    </div>
+</body>
+</html>

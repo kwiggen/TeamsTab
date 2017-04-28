@@ -1,0 +1,75 @@
+﻿
+@model TeamsTab.Models.TeamData
+
+
+<html>
+
+<head>
+  <script src="https://statics.teams.microsoft.com/sdk/v0.4/js/MicrosoftTeams.min.js"></script>
+  <script type="text/javascript">
+      microsoftTeams.initialize();
+
+      //Print out the Context variables from Teams and print them to the screen
+      var name;
+      var tenant;
+      var team;
+      var locale;
+      microsoftTeams.getContext(c => {
+          console.log(c);
+          name = c.upn;
+          tenant = c.tid;
+          team = c.groupId;
+          locale = c.locale;
+          entityId = c.entityId;
+
+          document.querySelector('.context-values').innerHTML =
+              `Name: ${name}<br>Tenant:${tenant}<br>Team:${team}<br>Locale:${locale}<br>EntityId:${entityId}`;
+         
+      });
+
+
+      //Launch an Authentication window that can be used by Tab's Service to log the user into their application
+      function success() {
+          document.querySelector('.context-values').innerHTML = "Success";
+      };
+
+      function failure() {
+          document.querySelector('.context-values').innerHTML = "Failure";     
+      };
+
+      function runMe() {
+          microsoftTeams.authentication.authenticate({
+              url: "https://7fae1cdc.ngrok.io/login.html",
+              height: 75,
+              width: 180,
+              successCallback: success,
+              failureCallback: failure
+          });
+      };
+
+      
+  </script>
+    
+</head>
+
+<body>
+    <!-- Display Data Passe on URL to this tab-->
+    Name: @Html.DisplayFor(c => c.User)<br />
+    Tenant: @Html.DisplayFor(c => c.Tenant)<br/>
+    Team: @Html.DisplayFor(c => c.Group)<br/>
+    Locale: @Html.DisplayFor(c => c.Locale)<br/>
+    EntityId: @Html.DisplayFor(c => c.Entity)<br/>
+
+    <br />
+
+    <!-- Auth Button -->
+    <button name="authButton" onclick=runMe()>Authenticate</button>
+
+    <!-- Div for displaying Context information and return from Auth-->
+    <div class="context-values">
+
+    </div>
+</body>
+
+
+</html>

@@ -1,0 +1,9 @@
+C:\Users\kewig\Source\Repos\TeamsTab\TeamsTab\bin\Debug\netcoreapp1.1\TeamsTab.deps.json
+C:\Users\kewig\Source\Repos\TeamsTab\TeamsTab\bin\Debug\netcoreapp1.1\TeamsTab.runtimeconfig.json
+C:\Users\kewig\Source\Repos\TeamsTab\TeamsTab\bin\Debug\netcoreapp1.1\TeamsTab.runtimeconfig.dev.json
+C:\Users\kewig\Source\Repos\TeamsTab\TeamsTab\bin\Debug\netcoreapp1.1\TeamsTab.dll
+C:\Users\kewig\Source\Repos\TeamsTab\TeamsTab\bin\Debug\netcoreapp1.1\TeamsTab.pdb
+C:\Users\kewig\Source\Repos\TeamsTab\TeamsTab\obj\Debug\netcoreapp1.1\TeamsTab.csprojResolveAssemblyReference.cache
+C:\Users\kewig\Source\Repos\TeamsTab\TeamsTab\obj\Debug\netcoreapp1.1\TeamsTab.AssemblyInfo.cs
+C:\Users\kewig\Source\Repos\TeamsTab\TeamsTab\obj\Debug\netcoreapp1.1\TeamsTab.dll
+C:\Users\kewig\Source\Repos\TeamsTab\TeamsTab\obj\Debug\netcoreapp1.1\TeamsTab.pdb

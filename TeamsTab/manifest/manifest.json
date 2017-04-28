@@ -1,0 +1,32 @@
+﻿{
+  "$schema": "https://statics.teams.microsoft.com/sdk/v0.4/manifest/MicrosoftTeams.schema.json",
+  "manifestVersion": "0.4",
+  "version": "1.0",
+  "developer": {
+    "name": "Microsoft Education",
+    "websiteUrl": "https://www.microsoft.com/edu",
+    "privacyUrl": "https://www.microsoft.com/privacy",
+    "termsOfUseUrl": "https://www.microsoft.com/app-tos"
+  },
+  "tabs": [
+    {
+      "id": "f282e9cb-39aa-4ebd-ad60-004647fa8416",
+      "name": "Edu Test",
+      "description": {
+        "short": "Education Hello 2",
+        "full": "A longer description of the edu hello"
+      },
+      "icons": {
+        "44": "https://7fae1cdc.ngrok.io/44x44.png",
+        "88": "https://7fae1cdc.ngrok.io/88x88.png"
+      },
+      "accentColor": "#f21d2d",
+      "configUrl": "https://7fae1cdc.ngrok.io/config.html",
+      "canUpdateConfig": true
+    }
+  ],
+  "needsIdentity": true,
+  "validDomains": [
+    "*.ngrok.io"
+  ]
+}
