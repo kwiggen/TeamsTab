@@ -8,6 +8,8 @@ In order to run this with teams you will need to run ngrok to get a HTTPS connec
 Once you start ngrok you need to update the ngrok domain inside:
 - config.html
 - manifest.json
-- indes.cshtml
+- index.cshtml
 
 manifest.json should be zipped in order to create the Teams Side Load package.
+
+Note that "neeedsIdentity" must be true in the manifest.json in order for the user data to be passed to the tab OR available via getSettings javascript.
