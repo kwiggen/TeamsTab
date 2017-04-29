@@ -3,7 +3,9 @@ Default Scafolding For Creating a Tab in Microsoft Teams
 
 This is a Microsoft .Net Core Web Applications which shows some basic scafolding for Microsoft Teams.
 
-In order to run this with teams you will need to run ngrok to get a HTTPS connection to your local machine.
+In order to run this with teams you will need to run ngrok (http://ngrok.com) to get a HTTPS connection to your local machine.
+ngrok http 3979 --host-header=localhost
+
 
 Once you start ngrok you need to update the ngrok domain inside:
 - config.html
