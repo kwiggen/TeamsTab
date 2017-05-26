@@ -1,6 +1,8 @@
 ﻿{
-  "$schema": "https://statics.teams.microsoft.com/sdk/v0.4/manifest/MicrosoftTeams.schema.json",
-  "manifestVersion": "0.4",
+  "$schema": "https://statics.teams.microsoft.com/sdk/v1.0/manifest/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.0",
+  "packageName": "com.microsoft.TeamsTab",
+  "id": "f282e9cb-39aa-4ebd-ad60-004647fa8416",
   "version": "1.0",
   "developer": {
     "name": "Microsoft Education",
@@ -8,24 +10,29 @@
     "privacyUrl": "https://www.microsoft.com/privacy",
     "termsOfUseUrl": "https://www.microsoft.com/app-tos"
   },
-  "tabs": [
+  "name": {
+    "short": "Demo Tab for Edu"
+  },
+  "description": {
+    "short": "Demo Tab for EDU",
+    "full": "Demo Tab for EDU"
+  },
+  "icons": {
+    "outline": "20x20.jpg",
+    "color": "96x96.png"
+  },
+  "accentColor": "#4464ee",
+  "configurableTabs": [
     {
-      "id": "f282e9cb-39aa-4ebd-ad60-004647fa8416",
-      "name": "Edu Test",
-      "description": {
-        "short": "Education Hello 2",
-        "full": "A longer description of the edu hello"
-      },
-      "icons": {
-        "44": "https://7fae1cdc.ngrok.io/44x44.png",
-        "88": "https://7fae1cdc.ngrok.io/88x88.png"
-      },
-      "accentColor": "#f21d2d",
-      "configUrl": "https://7fae1cdc.ngrok.io/config.html",
-      "canUpdateConfig": true
+      "configurationUrl": "https://899e516b.ngrok.io/config.html",
+      "canUpdateConfiguration": true,
+      "scopes": [ "team" ]
     }
   ],
-  "needsIdentity": true,
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
   "validDomains": [
     "*.ngrok.io"
   ]

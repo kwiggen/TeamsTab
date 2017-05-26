@@ -19,7 +19,7 @@
         </section>
     </form>
 
-    <script src="https://statics.teams.microsoft.com/sdk/v0.4/js/MicrosoftTeams.min.js"></script>
+    <script src="https://statics.teams.microsoft.com/sdk/v1.0/js/MicrosoftTeams.min.js"></script>
     <script type="text/javascript">
         microsoftTeams.initialize();
 
@@ -31,7 +31,7 @@
         var locale;
         var entityId;
         microsoftTeams.getContext(c => {
-            console.log(c);
+            console.log("kevin c is" + c  + " " + c.upn);
             name = c.upn;
             tenant = c.tid;
             team = c.groupId;
@@ -50,7 +50,7 @@
 
             microsoftTeams.settings.setSettings({
                 entityId: className.value,
-                contentUrl: "https://7fae1cdc.ngrok.io?name={upn}&tenant={tid}&group={groupId}&entity={entityId}&locale={locale}", 
+                contentUrl: "https://899e516b.ngrok.io?name={upn}&tenant={tid}&group={groupId}&entity={entityId}&locale={locale}", 
                 suggestedDisplayName: "EduTab",  
             });
             saveEvent.notifySuccess();
