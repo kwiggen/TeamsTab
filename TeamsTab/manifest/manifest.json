@@ -24,9 +24,17 @@
   "accentColor": "#4464ee",
   "configurableTabs": [
     {
-      "configurationUrl": "https://899e516b.ngrok.io/config.html",
+      "configurationUrl": "https://c70064f6.ngrok.io/config.html",
       "canUpdateConfiguration": true,
       "scopes": [ "team" ]
+    }
+  ],
+  "staticTabs": [
+    {
+      "entityId": "foobar",
+      "name": "Personam Tab",
+      "contentUrl": "https://c70064f6.ngrok.io?name={upn}&tenant={tid}&group={groupId}&entity={entityId}&locale={locale}",
+      "scopes": [ "personal" ]
     }
   ],
   "permissions": [
